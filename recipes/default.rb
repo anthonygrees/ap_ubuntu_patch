@@ -7,7 +7,7 @@
 bash 'apt-get update' do
     code <<-EOH
 
-sudo apt-get upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
 
 EOH
 end
